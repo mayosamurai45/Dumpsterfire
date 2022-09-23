@@ -1,32 +1,36 @@
-print("Adjon egy mondatot:")
-mondat=input()
+def Mondat_szabdalo(name):
+    betuszam={}
+    szam=0
+    for x in mondat:
+        for y in mondat:
+    
+            if  x==y:
+                szam=szam+1
+                betuszam[x]=szam
+        szam=0       
+    print("betuk gyakorisága:",betuszam)
+    print("fordítva: "+mondat[::-1])
+    szolista=[mondat.split(' ')]
+    print(szolista)
+def converter(name,int):
+    ered=0.0
+    if mertekegyseg=="inch":
+        ered=(szam)*2.54
+        print(ered,"cm")
+    elif mertekegyseg=="cm":
+        ered=szam/2.54
+        print(ered,"inch")
+    else:
+        print("Not correct unit")
+    
 
 
-betuszam={}
-
-print("betuk gyakorisága ")
-print(betuszam)
-print("fordítva: "+mondat[::-1])
-szolista=[mondat.split(' ')]
-print(szolista)
+        
 
 
-
-
-
-print("Adjon meg egy számot és egy mértékegységet (cm/inch):")
-szam=float(input())
-mertekegyseg=input()
-ered=0.0
-if mertekegyseg=="inch":
-    ered=(szam)*2.54
-    print(ered)
-    print("cm")
-elif mertekegyseg=="cm":
-    ered=szam/2.54
-    print(ered)
-    print("inch")
-else:
-    print("Not correct unit")
-
-
+if __name__ == "__main__":
+    mondat=input("Adjon egy mondatot:")
+    Mondat_szabdalo(mondat)
+    szam=float(input("Adjon meg egy számot:"))
+    mertekegyseg=input("Adjon meg egy mértékegységet (cm/inch):")
+    converter(szam,mertekegyseg)
